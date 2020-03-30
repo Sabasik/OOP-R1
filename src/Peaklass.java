@@ -2,12 +2,27 @@ import java.util.Scanner;
 
 public class Peaklass {
     public static void main(String[] args) {
-        Lahutamine l1 = new Lahutamine(5, 1);
+        int r = raskusaste();
+        int mitu = mituTehet();
+        Lahutamine l1 = new Lahutamine(mitu, r);
         l1.jooksuta();
-        Lahutamine l2 = new Lahutamine(5, 2);
-        l2.jooksuta();
-        Lahutamine l3 = new Lahutamine(5, 3);
-        l3.jooksuta();
+    }
+    public static int mituTehet(){
+        int mitu = 0;
+        while (true){
+            Scanner s = new Scanner(System.in);
+            System.out.println("Mitu tehet soovid teha?");
+            try{
+                mitu = Integer.parseInt(s.nextLine());
+                if(mitu < 1){
+                    throw new Exception();
+                }
+                break;
+            }catch (Exception e){
+                System.out.println("Palun sisesta positiivne täisarv!");
+            }
+        }
+        return mitu;
     }
     public static int raskusaste(){
         int r = 0;
