@@ -4,8 +4,8 @@ public class Peaklass {
     public static void main(String[] args) {
         int r = raskusaste();
         int mitu = mituTehet();
-        Lahutamine l1 = new Lahutamine(mitu, r);
-        l1.jooksuta();
+        Jagamine j1 = new Jagamine(mitu, r);
+        j1.jooksuta();
     }
     public static int mituTehet(){
         int mitu = 0;
