@@ -47,13 +47,13 @@ public class Jagamine {
     public int suvaline(){
         List<Integer> valik;
         if(this.raskusaste == 1){
-            valik = Arrays.asList(1, 2, 3, 4, 5);
+            valik = Arrays.asList(0, 1, 2, 3, 4, 5);
         }
         else if(this.raskusaste == 2){
-            valik = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+            valik = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         }
         else{
-            valik = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+            valik = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
         }
         return valik.get((int) (Math.random() * valik.size()));
     }
