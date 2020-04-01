@@ -27,11 +27,11 @@ public class Liitmine {
             try {
                 String sisend = s.nextLine();
                 if (sisend.equals("")) {
-                    System.out.println("Õige vastus on: " + (arv1 - arv2));
+                    System.out.println("Õige vastus on: " + (arv1 + arv2));
                     break;
                 } else {
                     vastus = Integer.parseInt(sisend);
-                    if (vastus != arv1 - arv2) {
+                    if (vastus != arv1 + arv2) {
                         throw new Exception();
                     }
                     break;
