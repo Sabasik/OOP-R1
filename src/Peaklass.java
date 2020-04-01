@@ -4,11 +4,14 @@ public class Peaklass {
     public static void main(String[] args) {
         int r = raskusaste();
         int mitu = mituTehet();
+        Liitmine l1 = new Liitmine(mitu, r);
+        Lahutamine la1 = new Lahutamine(mitu, r);
+        Korrutamine k1 = new Korrutamine(mitu, r);
         Jagamine j1 = new Jagamine(mitu, r);
         j1.jooksuta();
     }
     public static int mituTehet(){
-        int mitu = 0;
+        int mitu;
         while (true){
             Scanner s = new Scanner(System.in);
             System.out.println("Mitu tehet soovid teha?");
@@ -25,11 +28,11 @@ public class Peaklass {
         return mitu;
     }
     public static int raskusaste(){
-        int r = 0;
+        int r;
         while (true){
             Scanner s = new Scanner(System.in);
             System.out.println("Vali raskusaste:\nlihtne - sisesta 1\n"
-                    + "keskmine - sisesta 2\nraske - sisesta 3");
+                    + "keskmine - sisesta 2\nraske - sisesta 3\n");
             try{
                 r = Integer.parseInt(s.nextLine());
                 if(r < 1 || r > 3){

@@ -1,12 +1,8 @@
 import java.util.Scanner;
 
-public class Liitmine {
-    private int tehted;
-    private int raskusaste;
-
+public class Liitmine extends Tehe{
     public Liitmine(int tehted, int raskusaste) {
-        this.tehted = tehted;
-        this.raskusaste = raskusaste;
+        super(tehted, raskusaste);
     }
 
     public void jooksuta() {
@@ -19,7 +15,7 @@ public class Liitmine {
         }
     }
 
-    public static void esita(int arv1, int arv2) {
+    public void esita(int arv1, int arv2) {
         int vastus;
         while (true) {
             System.out.print(arv1 + " + " + arv2 + " = ");

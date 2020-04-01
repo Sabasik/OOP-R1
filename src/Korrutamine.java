@@ -1,25 +1,11 @@
 import java.util.Scanner;
 
-public class Korrutamine {
-    private int tehted;
-    private int raskusaste;
-
+public class Korrutamine extends Tehe{
     public Korrutamine(int tehted, int raskusaste) {
-        this.tehted = tehted;
-        this.raskusaste = raskusaste;
+        super(tehted, raskusaste);
     }
 
-    public void jooksuta() {
-        if (raskusaste == 1) {
-            lihtne();
-        } else if (raskusaste == 2) {
-            keskmine();
-        } else {
-            raske();
-        }
-    }
-
-    public static void esita(int arv1, int arv2) {
+    public void esita(int arv1, int arv2) {
         int vastus;
         while (true) {
             System.out.print(arv1 + " * " + arv2 + " = ");
