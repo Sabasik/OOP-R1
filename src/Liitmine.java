@@ -9,14 +9,12 @@ public class Liitmine {
         this.raskusaste = raskusaste;
     }
 
-    public void jooksuta(){
-        if(raskusaste == 1){
+    public void jooksuta() {
+        if (raskusaste == 1) {
             lihtne();
-        }
-        else if (raskusaste == 2){
+        } else if (raskusaste == 2) {
             keskmine();
-        }
-        else{
+        } else {
             raske();
         }
     }
@@ -29,11 +27,11 @@ public class Liitmine {
             try {
                 String sisend = s.nextLine();
                 if (sisend.equals("")) {
-                    System.out.println("Õige vastus on: " + (arv1 + arv2));
+                    System.out.println("Õige vastus on: " + (arv1 - arv2));
                     break;
                 } else {
                     vastus = Integer.parseInt(sisend);
-                    if (vastus != arv1 + arv2) {
+                    if (vastus != arv1 - arv2) {
                         throw new Exception();
                     }
                     break;
@@ -50,7 +48,7 @@ public class Liitmine {
             int arv1 = (int) Math.round(Math.random() * 24 + 1);
             int arv2 = (int) Math.round(Math.random() * 24 + 1);
             i++;
-            esita(arv1,arv2);
+            esita(arv1, arv2);
         }
     }
 
@@ -60,7 +58,7 @@ public class Liitmine {
             int arv1 = (int) Math.round(Math.random() * 74 + 1);
             int arv2 = (int) Math.round(Math.random() * 74 + 1);
             i++;
-            esita(arv1,arv2);
+            esita(arv1, arv2);
         }
     }
 
@@ -70,7 +68,7 @@ public class Liitmine {
             int arv1 = (int) Math.round(Math.random() * 124 + 1);
             int arv2 = (int) Math.round(Math.random() * 124 + 1);
             i++;
-            esita(arv1,arv2);
+            esita(arv1, arv2);
         }
     }
 }
