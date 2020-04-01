@@ -7,29 +7,6 @@ public class Jagamine extends Tehe{
         super(tehted, raskusaste);
     }
 
-    public void esita(int arv1, int arv2){
-        int vastus = 0;
-        while (true){
-            System.out.print(arv1 + " / " + arv2 + " = ");
-            Scanner s = new Scanner(System.in);
-            try{
-                String sisend = s.nextLine();
-                if(sisend.equals("")){
-                    System.out.println("Õige vastus on: " + (arv1 / arv2));
-                    break;
-                }
-                else {
-                    vastus = Integer.parseInt(sisend);
-                    if (vastus != arv1 / arv2) {
-                        throw new Exception();
-                    }
-                    break;
-                }
-            }catch (Exception e){
-                System.out.println("Vale vastus, proovi uuesti!");
-            }
-        }
-    }
     public int suvaline(boolean on_esimene){
         List<Integer> valik;
         if(on_esimene){
@@ -61,7 +38,7 @@ public class Jagamine extends Tehe{
             int arv1 = suvaline(true);
             int arv2 = suvaline(false);
             int arv = arv1 * arv2;
-            esita(arv, arv1);
+            esita(arv, arv1, '/');
         }
     }
     public void keskmine(){
@@ -69,7 +46,7 @@ public class Jagamine extends Tehe{
             int arv1 = suvaline(true);
             int arv2 = suvaline(false);
             int arv = arv1 * arv2;
-            esita(arv, arv1);
+            esita(arv, arv1, '/');
         }
     }
     public void raske(){
@@ -77,7 +54,7 @@ public class Jagamine extends Tehe{
             int arv1 = suvaline(true);
             int arv2 = suvaline(false);
             int arv = arv1 * arv2;
-            esita(arv, arv1);
+            esita(arv, arv1, '/');
         }
     }
 }
