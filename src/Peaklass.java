@@ -9,6 +9,9 @@ public class Peaklass {
         Korrutamine k1 = new Korrutamine(mitu, r);
         Jagamine j1 = new Jagamine(mitu, r);
         j1.jooksuta();
+        l1.jooksuta();
+        k1.jooksuta();
+        la1.jooksuta();
     }
     public static int mituTehet(){
         int mitu;
