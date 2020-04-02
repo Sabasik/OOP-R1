@@ -9,8 +9,8 @@ public abstract class Tehe {
         this.raskusaste = raskusaste;
     }
 
-    public void jooksuta() {
-        if (raskusaste == 1) {
+    public void jooksuta() {        // meetod, mis jooksutab vastava raskusastme ja kasutab selleks vastavat meetodit,
+        if (raskusaste == 1) {      // see meetod käivitatakse peaklassis
             lihtne();
         } else if (raskusaste == 2) {
             keskmine();
@@ -19,9 +19,9 @@ public abstract class Tehe {
         }
     }
 
-    public void esita(int arv1, int arv2, char mark) {
-        int vastus;
-        int avaldis;
+    public void esita(int arv1, int arv2, char mark) {     // kasutus ainult lihttehete puhul Saab sisendiks 2 arvu ja märgi
+        int vastus;                                       // ning seejärel prindib tehted ekraanile - meetod kutsutakse esile
+        int avaldis;                                      // raskusastmete meetodites.
         if (mark == '+') {
             avaldis = arv1 + arv2;
         } else if (mark == '-') {
@@ -52,8 +52,8 @@ public abstract class Tehe {
         }
     }
 
-    public abstract void lihtne();
-
+    public abstract void lihtne();    // abstraktsed meetodid, mis realiseeritakse igas alamklassis.
+                                      // sisaldab suvaliste arvude genereerimist ning vastavat esita meetodit
     public abstract void keskmine();
 
     public abstract void raske();

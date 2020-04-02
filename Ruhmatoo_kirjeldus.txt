@@ -81,7 +81,7 @@ Rühmaliikmete panus
 
 Tegemise mured:
 Programmis tahaks kasutada graafilist kasutajaliidest, aga kuna seda me alles õpime, siis soovitati seda vältida,
-kkuigi see sobiks siia hästi.
+kuigi see sobiks siia hästi.
 
 Hinnang lõpptulemusele:
 Tulemus vastab ettekujutusele. Plaanitud asjad said kenasti valmis, kõik töötab nii nagu tahtsime.
