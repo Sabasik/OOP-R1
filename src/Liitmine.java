@@ -1,16 +1,6 @@
-public class Liitmine extends Tehe{
+public class Liitmine extends Tehe {
     public Liitmine(int tehted, int raskusaste) {
         super(tehted, raskusaste);
-    }
-
-    public void jooksuta() {
-        if (raskusaste == 1) {
-            lihtne();
-        } else if (raskusaste == 2) {
-            keskmine();
-        } else {
-            raske();
-        }
     }
 
     public void lihtne() {
@@ -19,7 +9,7 @@ public class Liitmine extends Tehe{
             int arv1 = (int) Math.round(Math.random() * 24 + 1);
             int arv2 = (int) Math.round(Math.random() * 24 + 1);
             i++;
-            esita(arv1, arv2,'+');
+            esita(arv1, arv2, '+');
         }
     }
 
@@ -29,7 +19,7 @@ public class Liitmine extends Tehe{
             int arv1 = (int) Math.round(Math.random() * 74 + 1);
             int arv2 = (int) Math.round(Math.random() * 74 + 1);
             i++;
-            esita(arv1, arv2,'+');
+            esita(arv1, arv2, '+');
         }
     }
 
@@ -39,7 +29,7 @@ public class Liitmine extends Tehe{
             int arv1 = (int) Math.round(Math.random() * 124 + 1);
             int arv2 = (int) Math.round(Math.random() * 124 + 1);
             i++;
-            esita(arv1, arv2,'+');
+            esita(arv1, arv2, '+');
         }
     }
 }
