@@ -16,8 +16,8 @@ public class Korrutamine extends Tehe{
     public void keskmine() {
         int i = 0;
         while (i < tehted) {
-            int arv1 = (int) Math.round(Math.random() * 10);
-            int arv2 = (int) Math.round(Math.random() * 10);
+            int arv1 = (int) Math.round(Math.random() * 5 + 5);
+            int arv2 = (int) Math.round(Math.random() * 5 + 5);
             i++;
             esita(arv1, arv2,'*');
         }
@@ -26,8 +26,8 @@ public class Korrutamine extends Tehe{
     public void raske() {
         int i = 0;
         while (i < tehted) {
-            int arv1 = (int) Math.round(Math.random() * 15);
-            int arv2 = (int) Math.round(Math.random() * 15);
+            int arv1 = (int) Math.round(Math.random() * 5 + 10);
+            int arv2 = (int) Math.round(Math.random() * 5 + 10);
             i++;
             esita(arv1, arv2,'*');
         }
