@@ -1,0 +1,100 @@
+Töö autorid: Elis Käär, Kadi Sammul
+
+Programm on valminud eesmärgiga aidata algklasside õpilastel arvutamist harjutada.
+Programmis on võimalik teha liitmis-, lahutamis-, korrutamis- ja jagamistehteid.
+Lisaks on võimalik teha kombineeritud tehteid.
+Kasutaja saab valida endale teema/valdkonna? ja raskusastme ning määrata, mitu tehet ta soovib teha.
+Programm genereerib tingimustele vastavad tehted ja küsib kasutajalt vastust. Vale vastuse korral küsitakse
+tehet uuesti kuni sisestatakse õige vastus. Kui õiget vastust välja mõelda ei suuda võib ka vajutada lihtsalt
+ENTERit. Siis teatab programm kasutajale õige vastuse ja genereerib järgmise tehte (kui soovitud tehete arv 
+veel täis ei ole). Kui määratud tehted saavad tehtud küsitakse kasutajalt uuesti, milliseid tehteid teha soovitakse.
+Programmi töö lõpetamiseks tuleb tehte liigi määramise asemel sisestada 'exit'.
+
+Peaklass
+- programmi käivitamine
+- suhtlus kasutajaga
+- vastavalt kasutaja soovile õige klassi käivitamine
+- meetodid:
+	-suhtlus kasutajaga
+
+Tehe
+- abstraktne klass
+- sisaldab viit alamklassi, kõigi eesmärk on sobivate tehete genereerimine
+- meetod jooksuta()
+	-käivitab vastavalt raskusastmele õige meetodi
+-meetod esita(int, int, char)
+	-vastavalt tehte liigile väljastab tehte õigel kujul ning kontrollib vastuse paikapidavust,
+		vajadusel küsib tehet uuesti
+-abtraktsed meetodid lihtne(), keskmine() ja raske()
+
+Liitmine
+- Tehte alamklass
+- meetodid lihtne(), keskmine() ja raske()
+	-genereerivad sobivas vahemikus arvud ning käivitavad meetodi esita(int, int, char)
+
+
+Lahutamine
+- Tehte alamklass
+- meetodid lihtne(), keskmine() ja raske()
+	-genereerivad sobivas vahemikus arvud ning käivitavad meetodi esita(int, int, char)
+
+
+Korrutamine
+- Tehte alamklass
+- meetodid lihtne(), keskmine() ja raske()
+	-genereerivad sobivas vahemikus arvud ning käivitavad meetodi esita(int, int, char)
+
+
+Jagamine
+- Tehte alamklass
+- meetodid lihtne(), keskmine() ja raske()
+	-genereerivad sobivas vahemikus arvud ning käivitavad meetodi esita(int, int, char)
+- meetod suvaline(boolean)
+	-abimeetod sobivate arvude genereerimseks
+
+Kombineeritud
+- Tehte alamklass
+- meetodid lihtne(), keskmine() ja raske()
+	-genereerivad sobivas vahemikus arvud ning käivitavad vastavalt
+		meetodi esitaKombineeritud1(int, int, int, char, char) //lihtne, keskmine
+		või esitaKombineeritud2(int, int, int, int, char) //raske
+
+Projekti tegemise protsess - mõlemad rühmaliikmed panustasid ühiselt
+1) idee arendamine
+	-esialgse idee lahti mõtestamine
+	-projekti struktuuri ja ülesehituse kooskõlastamine
+	-detailide täpsustamine
+2) programmi kirjutamine
+	-esimese klassi valmimine näidisena
+	-teiste klasside valmimine
+	-ülemklassi tegemine korduste vähendamiseks
+	-ülevaatus struktuuri ilustamiseks
+3) kirjelduse valmimine ja viimased ilustused
+
+Rühmaliikmete panus
+	-Elis
+		-> Liitmine, Korrutamine, Kombineeritud, Tehe
+		-> orienteeruv ajakulu: 20h
+	-Kadi
+		-> Lahutamine, Jagamine, Peaklass, kirjeldus
+		-> orienteeruv ajakulu: 20h
+
+Tegemise mured:
+Programmis tahaks kasutada graafilist kasutajaliidest, aga kuna seda me alles õpime, siis soovitati seda vältida,
+kuigi see sobiks siia hästi.
+
+Hinnang lõpptulemusele:
+Tulemus vastab ettekujutusele. Plaanitud asjad said kenasti valmis, kõik töötab nii nagu tahtsime.
+
+Programmi testimine:
+Meetodite käivitamine erinevate algandmetega.
+Programmi korduv käivitamine, mille käigus kõikvõimalike sisendite puhul vaatasime, et programm teeks
+nõutud tegevusi korrektselt.
+Kontroll, et programm töötaks ka siis, kui kasutaja otsustab sisestada midagi suvalist.
+
+
+
+
+
+
+
