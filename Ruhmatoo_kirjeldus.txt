@@ -3,19 +3,15 @@ Töö autorid: Elis Käär, Kadi Sammul
 Programm on valminud eesmärgiga aidata algklasside õpilastel arvutamist harjutada.
 Programmis on võimalik teha liitmis-, lahutamis-, korrutamis- ja jagamistehteid.
 Lisaks on võimalik teha kombineeritud tehteid.
-Kasutaja saab valida endale teema/valdkonna? ja raskusastme ning määrata, mitu tehet ta soovib teha.
-Programm genereerib tingimustele vastavad tehted ja küsib kasutajalt vastust. Vale vastuse korral küsitakse
-tehet uuesti kuni sisestatakse õige vastus. Kui õiget vastust välja mõelda ei suuda võib ka vajutada lihtsalt
-ENTERit. Siis teatab programm kasutajale õige vastuse ja genereerib järgmise tehte (kui soovitud tehete arv 
-veel täis ei ole). Kui määratud tehted saavad tehtud küsitakse kasutajalt uuesti, milliseid tehteid teha soovitakse.
-Programmi töö lõpetamiseks tuleb tehte liigi määramise asemel sisestada 'exit'.
+Kasutaja saab valida endale tehete tüübi ja raskusastme. Pärast igat õiget vastust tuleb uuesti valida.
+Programm genereerib tingimustele vastavad tehted ja küsib kasutajalt vastust. Tehe on ees kuni sisestatakse
+õige vastus. Vale vastuse korral informeeritakse sellest kasutajat. Kui sisestatakse mittearvuline väärtus,
+siis teavitatakse sellest kasutajat. Programmi saab kinni panna nupust "Lõpeta".
 
 Peaklass
 - programmi käivitamine
-- suhtlus kasutajaga
-- vastavalt kasutaja soovile õige klassi käivitamine
-- meetodid:
-	-suhtlus kasutajaga
+- suhtlus kasutajaga (graafilise kasutajaliidese kaudu)
+- kasutaja soovile vastavate tehete näitamine ja vastuse kontroll
 
 Tehe
 - abstraktne klass
@@ -23,43 +19,45 @@ Tehe
 - meetod jooksuta()
 	-käivitab vastavalt raskusastmele õige meetodi
 -meetod esita(int, int, char)
-	-vastavalt tehte liigile väljastab tehte õigel kujul ning kontrollib vastuse paikapidavust,
-		vajadusel küsib tehet uuesti
+	-vastavalt tehte liigile tagastab tehte õigel kujul + tagastab vastuse
 -abtraktsed meetodid lihtne(), keskmine() ja raske()
 
 Liitmine
 - Tehte alamklass
 - meetodid lihtne(), keskmine() ja raske()
-	-genereerivad sobivas vahemikus arvud ning käivitavad meetodi esita(int, int, char)
+	-genereerivad sobivas vahemikus arvud ning tagastavad meetodi esita(int, int, char) väärtuse
 
 
 Lahutamine
 - Tehte alamklass
 - meetodid lihtne(), keskmine() ja raske()
-	-genereerivad sobivas vahemikus arvud ning käivitavad meetodi esita(int, int, char)
+	-genereerivad sobivas vahemikus arvud ning tagastavad meetodi esita(int, int, char) väärtuse
 
 
 Korrutamine
 - Tehte alamklass
 - meetodid lihtne(), keskmine() ja raske()
-	-genereerivad sobivas vahemikus arvud ning käivitavad meetodi esita(int, int, char)
+	-genereerivad sobivas vahemikus arvud ning tagastavad meetodi esita(int, int, char) väärtuse
 
 
 Jagamine
 - Tehte alamklass
 - meetodid lihtne(), keskmine() ja raske()
-	-genereerivad sobivas vahemikus arvud ning käivitavad meetodi esita(int, int, char)
+	-genereerivad sobivas vahemikus arvud ning tagastavad meetodi esita(int, int, char) väärtuse
 - meetod suvaline(boolean)
 	-abimeetod sobivate arvude genereerimseks
 
 Kombineeritud
 - Tehte alamklass
 - meetodid lihtne(), keskmine() ja raske()
-	-genereerivad sobivas vahemikus arvud ning käivitavad vastavalt
+	-genereerivad sobivas vahemikus arvud ning tagastavad vastavalt
 		meetodi esitaKombineeritud1(int, int, int, char, char) //lihtne, keskmine
 		või esitaKombineeritud2(int, int, int, int, char) //raske
+		väärtuse
+
 
 Projekti tegemise protsess - mõlemad rühmaliikmed panustasid ühiselt
+	I etapp
 1) idee arendamine
 	-esialgse idee lahti mõtestamine
 	-projekti struktuuri ja ülesehituse kooskõlastamine
@@ -70,26 +68,43 @@ Projekti tegemise protsess - mõlemad rühmaliikmed panustasid ühiselt
 	-ülemklassi tegemine korduste vähendamiseks
 	-ülevaatus struktuuri ilustamiseks
 3) kirjelduse valmimine ja viimased ilustused
+	II etapp
+1) idee arendamine
+	-esialgne välimus
+	-sisalduvad elemendid
+2) teostus
+	-eelnevate klasside muutmine, et asi ühilduks
+	-graafika lisamine
 
 Rühmaliikmete panus
+	I etapp
 	-Elis
 		-> Liitmine, Korrutamine, Kombineeritud, Tehe
 		-> orienteeruv ajakulu: 20h
 	-Kadi
 		-> Lahutamine, Jagamine, Peaklass, kirjeldus
 		-> orienteeruv ajakulu: 20h
+	II etapp
+	-Elis
+		-> ideed, täpsustused, suhtlus failidega
+		-> orienteeruv ajakulu: 20h
+	-Kadi
+		-> graafika, kirjeldus
+		-> orienteeruv ajakulu: 20h
 
 Tegemise mured:
-Programmis tahaks kasutada graafilist kasutajaliidest, aga kuna seda me alles õpime, siis soovitati seda vältida,
-kuigi see sobiks siia hästi.
+Arvasime mõlemad, et tähtaeg on nädal aega hiljem ning seetõttu ei jõudnud kõiki soovitud elemente
+programmi lisada, ning tulemusena on programm küllaltki lihtne ja tavaline.
 
 Hinnang lõpptulemusele:
+I etapp
 Tulemus vastab ettekujutusele. Plaanitud asjad said kenasti valmis, kõik töötab nii nagu tahtsime.
+II etapp
+Kõik vajalikud osad said programmi sisse. Ajapuuduse tõttu ei ole tulemus nii hea ja uhke kui me tahtsime,
+aga samas töötab programm nii nagu plaanisime.
 
 Programmi testimine:
-Meetodite käivitamine erinevate algandmetega.
-Programmi korduv käivitamine, mille käigus kõikvõimalike sisendite puhul vaatasime, et programm teeks
-nõutud tegevusi korrektselt.
+Kõikvõimalike sisestuste läbikatsetamine ja tulemuse korrektsuse hindamine.
 Kontroll, et programm töötaks ka siis, kui kasutaja otsustab sisestada midagi suvalist.
 
 
