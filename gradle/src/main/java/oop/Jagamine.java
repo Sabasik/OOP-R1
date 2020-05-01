@@ -1,10 +1,12 @@
+package oop;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Jagamine extends Tehe {
 
-    public Jagamine(int tehted, int raskusaste) {
-        super(tehted, raskusaste);
+    public Jagamine(int raskusaste) {
+        super(raskusaste);
     }
 
     public int suvaline(boolean on_esimene) {
@@ -29,30 +31,28 @@ public class Jagamine extends Tehe {
         return valik.get((int) (Math.random() * valik.size()));
     }
 
-    public void lihtne() {
-        for (int i = 0; i < this.tehted; i++) {
-            int arv1 = suvaline(true);
-            int arv2 = suvaline(false);
-            int arv = arv1 * arv2;
-            esita(arv, arv1, '/');
-        }
+    public String[] lihtne() {
+
+        int arv1 = suvaline(true);
+        int arv2 = suvaline(false);
+        int arv = arv1 * arv2;
+        return sõnena(arv, arv1, '/');
+
     }
 
-    public void keskmine() {
-        for (int i = 0; i < this.tehted; i++) {
-            int arv1 = suvaline(true);
-            int arv2 = suvaline(false);
-            int arv = arv1 * arv2;
-            esita(arv, arv1, '/');
-        }
+    public String[] keskmine() {
+        int arv1 = suvaline(true);
+        int arv2 = suvaline(false);
+        int arv = arv1 * arv2;
+        return sõnena(arv, arv1, '/');
     }
 
-    public void raske() {
-        for (int i = 0; i < this.tehted; i++) {
-            int arv1 = suvaline(true);
-            int arv2 = suvaline(false);
-            int arv = arv1 * arv2;
-            esita(arv, arv1, '/');
-        }
+    public String[] raske() {
+
+        int arv1 = suvaline(true);
+        int arv2 = suvaline(false);
+        int arv = arv1 * arv2;
+        return sõnena(arv, arv1, '/');
+
     }
 }

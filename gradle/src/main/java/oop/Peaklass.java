@@ -21,18 +21,22 @@ public class Peaklass extends Application {
 
     @Override
     public void start(Stage peaLava) throws Exception {
+
         BorderPane bp = new BorderPane();
         bp.setBackground(new Background(new BackgroundFill(Color.LIGHTCORAL, CornerRadii.EMPTY, Insets.EMPTY)));
+
         Group juur1 = new Group();
         Text tervitus = new Text("\n" + " ".repeat(40) + "Tere tulemast arvutama!");
         tervitus.setFont(Font.font("Verdana", FontWeight.EXTRA_BOLD, 20));
         tervitus.setFill(Color.INDIGO);
         juur1.getChildren().add(tervitus);
+
         Button liitmine = new Button("  Liitmine  ");
         Button lahutamine = new Button("Lahutamine");
         Button korrutamine = new Button("Korrutamine");
         Button jagamine = new Button("  Jagamine  ");
         Button kombineeritud = new Button("Kombineeritud tehted");
+
         bp.setTop(tervitus);
         bp.setCenter(juur1);
         liitmine.setLayoutX(25);
@@ -45,6 +49,7 @@ public class Peaklass extends Application {
         jagamine.setLayoutY(150);
         kombineeritud.setLayoutX(250);
         kombineeritud.setLayoutY(100);
+
         juur1.getChildren().addAll(liitmine, lahutamine, korrutamine, jagamine, kombineeritud);
         Scene avastseen = new Scene(bp, 800, 400, Color.LIGHTCORAL);
         peaLava.setTitle("Arvutamine");
