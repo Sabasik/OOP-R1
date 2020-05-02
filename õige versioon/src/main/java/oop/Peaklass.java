@@ -8,29 +8,82 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.FileInputStream;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 
 public class Peaklass extends Application {
 
     @Override
     public void start(Stage peaLava) throws Exception {
         Button lopp = new Button("Lõpeta");
+        Button vaataVastuseid = new Button("statistika");
+        int kokkuvastatud = 0;
+
         lopp.setStyle("-fx-base: red; -fx-text-fill: indigo; -fx-font-size: 20;");
         lopp.setLayoutX(700);
         lopp.setLayoutY(25);
+        vaataVastuseid.setVisible(false);
+        vaataVastuseid.setLayoutX(670);
+        vaataVastuseid.setLayoutY(100);
+        vaataVastuseid.setStyle("-fx-base: red; -fx-text-fill: indigo; -fx-font-size: 20;");
         Group juur1 = new Group();
+        File fail = new File("oigedvastused.txt");
+
+
+        // stati stseen
+
+        Group tehted = new Group();
+        Scene statisika = new Scene(tehted, 800, 400, Color.LIGHTCORAL);
+        Button lopp4 = new Button("Lõpeta");
+        lopp4.setStyle("-fx-base: red; -fx-text-fill: indigo; -fx-font-size: 20;");
+        lopp4.setLayoutX(700);
+        lopp4.setLayoutY(25);
+
+        Text tekst = new Text();
+        tehted.getChildren().addAll(tekst,lopp4);
+        tekst.setLayoutX(400);
+        tekst.setLayoutY(200);
+        tekst.setFont(Font.font("Verdana", FontWeight.EXTRA_BOLD, 25));
+        vaataVastuseid.setOnMouseClicked(e -> {
+
+
+            try {
+                String andmed = Files.readString(fail.toPath(), StandardCharsets.UTF_8);
+                String[] osad = andmed.split(",");
+                StringBuilder stat = new StringBuilder();
+
+
+                for (String s : osad) {
+                    stat.append(s);
+                    stat.append("\n");
+                }
+
+                stat.append("Õigesti vastatud: " + osad.length + "/" + kokkuvastatud);  //kokkuvastatud peab lugema kokku!!
+                tekst.setText(stat.toString());
+                peaLava.setScene(statisika);
+                peaLava.show();
+            } catch (IOException l) {
+                System.out.println("faili pole");
+            }
+
+        });
+
+        //avastseen
+
         Text tervitus = new Text("Tere tulemast arvutama!");
         tervitus.setFont(Font.font("Verdana", FontWeight.EXTRA_BOLD, 25));
         tervitus.setLayoutX(225);
         tervitus.setLayoutY(100);
         tervitus.setFill(Color.INDIGO);
-        juur1.getChildren().addAll(tervitus, lopp);
+        juur1.getChildren().addAll(tervitus, lopp, vaataVastuseid);
         Button liitmine = new Button("    Liitmine   ");
         Button lahutamine = new Button("Lahutamine");
         Button korrutamine = new Button("Korrutamine");
@@ -56,6 +109,10 @@ public class Peaklass extends Application {
         peaLava.setTitle("Arvutamine");
         peaLava.setScene(avastseen);
         peaLava.show();
+
+
+        // raskusastme stseen
+
 
         Button lopp2 = new Button("Lõpeta");
         lopp2.setStyle("-fx-base: red; -fx-text-fill: indigo; -fx-font-size: 20;");
@@ -104,6 +161,10 @@ public class Peaklass extends Application {
         lahenda.getChildren().addAll(lopp3, sisesta, vasta, l);
         Scene lahendamine = new Scene(lahenda, 800, 400, Color.LIGHTCORAL);
 
+
+        // õigesti vastanud korral tulev stseen
+
+
         Group oige = new Group();
         Button edasi = new Button("Edasi");
         edasi.setLayoutX(350);
@@ -119,29 +180,57 @@ public class Peaklass extends Application {
         imageView.setFitWidth(400);
         oige.getChildren().add(imageView);
         Scene vastatud = new Scene(oige, 800, 400, Color.LIGHTCORAL);
-        edasi.setOnAction(e ->{
+
+
+        //reaktsioonid
+        
+
+        edasi.setOnAction(e -> {
+            vaataVastuseid.setVisible(true);
             peaLava.setScene(avastseen);
             peaLava.show();
         });
-        lopp.setOnAction(e ->{
+        lopp.setOnAction(e -> {
+            if (fail.delete()) {
+                System.out.println("kustutatud vastustefail");
+                ;
+            }
             peaLava.close();
             System.exit(0);
         });
-        lopp2.setOnAction(e ->{
+        lopp2.setOnAction(e -> {
+            if (fail.delete()) {
+                System.out.println("kustutatud vastustefail");
+                ;
+            }
             peaLava.close();
             System.exit(0);
         });
-        lopp3.setOnAction(e ->{
+        lopp3.setOnAction(e -> {
+            if (fail.delete()) {
+                System.out.println("kustutatud vastustefail");
+                ;
+            }
+            peaLava.close();
+            System.exit(0);
+        });
+        lopp4.setOnAction(e -> {
+            if (fail.delete()) {
+                System.out.println("kustutatud vastustefail");
+                ;
+            }
             peaLava.close();
             System.exit(0);
         });
 
 
-        korrutamine.setOnAction(e ->{
+        korrutamine.setOnAction(e -> {
             l.setText("");
             peaLava.setScene(raskus);
             peaLava.show();
-            lihtne.setOnAction(ev ->{
+
+            lihtne.setOnAction(ev -> {
+
                 Tehe ko = new Korrutamine(1);
                 String[] info = ko.jooksuta();
                 Text avaldis = new Text(info[0]);
@@ -155,21 +244,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException exc) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            keskmine.setOnAction(ev ->{
+            keskmine.setOnAction(ev -> {
                 l.setText("");
                 Tehe ko = new Korrutamine(2);
                 String[] info = ko.jooksuta();
@@ -184,21 +275,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            raske.setOnAction(ev ->{
+            raske.setOnAction(ev -> {
                 l.setText("");
                 Tehe ko = new Korrutamine(3);
                 String[] info = ko.jooksuta();
@@ -213,26 +306,28 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
         });
-        liitmine.setOnAction(e ->{
+        liitmine.setOnAction(e -> {
             l.setText("");
             peaLava.setScene(raskus);
             peaLava.show();
-            lihtne.setOnAction(ev ->{
+            lihtne.setOnAction(ev -> {
                 Tehe li = new Liitmine(1);
                 String[] info = li.jooksuta();
                 Text avaldis = new Text(info[0]);
@@ -246,21 +341,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            keskmine.setOnAction(ev ->{
+            keskmine.setOnAction(ev -> {
                 l.setText("");
                 Tehe li = new Liitmine(2);
                 String[] info = li.jooksuta();
@@ -275,21 +372,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            raske.setOnAction(ev ->{
+            raske.setOnAction(ev -> {
                 l.setText("");
                 Tehe li = new Liitmine(3);
                 String[] info = li.jooksuta();
@@ -304,26 +403,28 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
         });
-        jagamine.setOnAction(e ->{
+        jagamine.setOnAction(e -> {
             l.setText("");
             peaLava.setScene(raskus);
             peaLava.show();
-            lihtne.setOnAction(ev ->{
+            lihtne.setOnAction(ev -> {
                 Tehe ja = new Jagamine(1);
                 String[] info = ja.jooksuta();
                 Text avaldis = new Text(info[0]);
@@ -337,21 +438,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            keskmine.setOnAction(ev ->{
+            keskmine.setOnAction(ev -> {
                 l.setText("");
                 Tehe ja = new Jagamine(2);
                 String[] info = ja.jooksuta();
@@ -366,21 +469,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            raske.setOnAction(ev ->{
+            raske.setOnAction(ev -> {
                 l.setText("");
                 Tehe ja = new Jagamine(3);
                 String[] info = ja.jooksuta();
@@ -395,26 +500,28 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
         });
-        lahutamine.setOnAction(e ->{
+        lahutamine.setOnAction(e -> {
             l.setText("");
             peaLava.setScene(raskus);
             peaLava.show();
-            lihtne.setOnAction(ev ->{
+            lihtne.setOnAction(ev -> {
                 Tehe la = new Lahutamine(1);
                 String[] info = la.jooksuta();
                 Text avaldis = new Text(info[0]);
@@ -428,21 +535,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            keskmine.setOnAction(ev ->{
+            keskmine.setOnAction(ev -> {
                 l.setText("");
                 Tehe la = new Lahutamine(2);
                 String[] info = la.jooksuta();
@@ -457,21 +566,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            raske.setOnAction(ev ->{
+            raske.setOnAction(ev -> {
                 l.setText("");
                 Tehe la = new Lahutamine(3);
                 String[] info = la.jooksuta();
@@ -486,25 +597,27 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
         });
-        kombineeritud.setOnAction(e ->{
+        kombineeritud.setOnAction(e -> {
             peaLava.setScene(raskus);
             peaLava.show();
-            lihtne.setOnAction(ev ->{
+            lihtne.setOnAction(ev -> {
                 l.setText("");
                 Tehe komb = new Kombineeritud(1);
                 String[] info = komb.jooksuta();
@@ -519,21 +632,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            keskmine.setOnAction(ev ->{
+            keskmine.setOnAction(ev -> {
                 l.setText("");
                 Tehe komb = new Kombineeritud(2);
                 String[] info = komb.jooksuta();
@@ -548,21 +663,23 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
-            raske.setOnAction(ev ->{
+            raske.setOnAction(ev -> {
                 l.setText("");
                 Tehe komb = new Kombineeritud(3);
                 String[] info = komb.jooksuta();
@@ -577,17 +694,19 @@ public class Peaklass extends Application {
                 vasta.setOnAction(action -> {
                     String sisend = sisesta.getText();
                     try {
-                        if(Integer.valueOf(sisend) == vastus){
+                        if (Integer.valueOf(sisend) == vastus) {
+                            failiKirjutaja(avaldis.getText(), String.valueOf(vastus));
                             sisesta.setText("");
                             lahenda.getChildren().remove(avaldis);
                             peaLava.setScene(vastatud);
                             peaLava.show();
-                        }
-                        else{
+                        } else {
                             l.setText("Vale vastus, proovi uuesti!");
                         }
-                    } catch (NumberFormatException exc){
+                    } catch (NumberFormatException exc) {
                         l.setText("Sisesta arvuline vastus!");
+                    } catch (IOException ex) {
+                        System.out.println("faili ei leitud");
                     }
                 });
             });
@@ -598,5 +717,9 @@ public class Peaklass extends Application {
         launch(args);
     }
 
-
+    public void failiKirjutaja(String avaldis, String vastus) throws IOException {
+        try (OutputStreamWriter vastusteKirjutaja = new OutputStreamWriter(new FileOutputStream("oigedvastused.txt", true))) {
+            vastusteKirjutaja.write(avaldis + " " + vastus + ",");
+        }
+    }
 }
