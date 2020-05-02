@@ -15,6 +15,15 @@ application {
     mainClassName = "oop.Peaklass"
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["src/main/java"]
+            includes = ["**/*.fxml"]
+        }
+    }
+}
+
 javafx {
     modules = ['javafx.controls', 'javafx.fxml']
 }

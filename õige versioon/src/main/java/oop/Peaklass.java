@@ -183,7 +183,6 @@ public class Peaklass extends Application {
 
 
         //reaktsioonid
-        
 
         edasi.setOnAction(e -> {
             vaataVastuseid.setVisible(true);
