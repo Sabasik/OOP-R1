@@ -117,7 +117,7 @@ I etapp
 II etapp
 	-Elis
 		-> ideed, graafika, suhtlus failidega
-		-> orienteeruv ajakulu: 20h
+		-> orienteeruv ajakulu: 35h
 	-Kadi
 		-> ideed, graafika, kirjeldus
 		-> orienteeruv ajakulu: 20h
@@ -125,7 +125,9 @@ II etapp
 
 Tegemise mured:
 Arvasime mõlemad, et tähtaeg on nädal aega hiljem ning seetõttu ei saanud nii rahulikult asjasse
-süveneda kui oleks tahtnud.
+süveneda kui oleks tahtnud. Lisaks ei käsitletud kursuses üldse fxml faile ja scene builderit, seega enda projektile
+ei saanud üldse alguses keskenduda vaid pidi kõike ise internetist ja stackoverflowst vaatama, sest ise algusest head
+visuaali luua oleks liiga ajakulukas.
 
 
 Hinnang lõpptulemusele:

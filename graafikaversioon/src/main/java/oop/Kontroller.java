@@ -120,8 +120,6 @@ public class Kontroller {
     @FXML
     public void exit(MouseEvent avt){
         Pane p = (Pane) avt.getSource();
-        p.setOpacity(100.0);
+        p.setOpacity(0.8);
     }
-
-
 }

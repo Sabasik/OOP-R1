@@ -2,55 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="352f8732-7dd1-473d-b3ff-60a12cbde44a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.idea/gradle.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.idea/töötab.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Jagamine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Kombineeritud.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Kontroller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Korrutamine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Lahutamine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Liitmine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Peaklass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/PeaklassProov.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Tehe.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/build/resources/main/oop/avastseen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Jagamine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Kombineeritud.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Kontroller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Korrutamine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Lahutamine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Liitmine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Peaklass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/PeaklassProov.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Tehe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/avastseen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graafikaversioon/tubli.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruhmatoo_kirjeldus.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Ruhmatoo_kirjeldus.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Kontroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/build/classes/java/main/oop/Kontroller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Kontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/graafikaversioon/src/main/java/oop/Kontroller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +41,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/graafikaversioon" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
