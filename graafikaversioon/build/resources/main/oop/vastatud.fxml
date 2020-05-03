@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="oop.Vastatud"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2E2E37;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.Vastatud">
+   <children>
+      <Text fill="#f5e4e4" layoutX="99.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Õigesti vastatud:" wrappingWidth="227.6875">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#f5e4e4" layoutX="358.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valesti vastatud:" wrappingWidth="227.6875">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="15.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="62.0" layoutY="231.0" opacity="0.83">
+         <image>
+            <Image url="@../../../../../../../Users/Elis/OneDrive/ÜLIKOOL/OOP/ruhmatoo1/graf/accept-icon-51.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="327.0" layoutY="231.0" opacity="0.7">
+         <image>
+            <Image url="@../../../../../../../Users/Elis/OneDrive/ÜLIKOOL/OOP/ruhmatoo1/graf/kisspng-no-symbol-computer-icons-clip-art-image-red-cross-5aadfa29a32b44.5706284615213512096684.png" />
+         </image>
+      </ImageView>
+      <Text fill="#f5e4e4" layoutX="108.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2/5" wrappingWidth="125.6875">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="46.0" />
+         </font>
+      </Text>
+      <Text fill="#f5e4e4" layoutX="358.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2/5" wrappingWidth="125.6875">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="46.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

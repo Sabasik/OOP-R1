@@ -11,7 +11,7 @@ public class PeaklassProov extends Application {
     @Override
     public void start(Stage peaLava) throws Exception {
         Parent juur = FXMLLoader.load(getClass().getResource("avastseen.fxml"));
-        Scene avastseen = new Scene(juur, 800, 400);
+        Scene avastseen = new Scene(juur);
         System.out.println(avastseen);
         avastseen.setRoot(juur);
         peaLava.setTitle("Arvutamine");

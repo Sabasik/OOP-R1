@@ -4,28 +4,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #14222F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.Raskus">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="539.0" style="-fx-background-color: #2E2E37;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.Raskus">
    <children>
-      <Button layoutX="682.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#lopetaVajuta" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #151115;" text="lõpeta" textFill="#e4c4c4">
-         <font>
-            <Font name="Lucida Sans Typewriter Regular" size="12.0" />
-         </font></Button>
-      <Button layoutX="37.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#tagasi" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #151115;" text="tagasi" textFill="#e4c4c4">
+      <Button layoutX="420.0" layoutY="592.0" mnemonicParsing="false" onMouseClicked="#tagasi" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #151115;" text="tagasi" textFill="#e4c4c4">
          <font>
             <Font name="Lucida Sans Typewriter Regular" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="58.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#lopetaVajuta" prefHeight="168.0" prefWidth="216.0" style="-fx-background-color: #151115;" text="kerge" textFill="#e4c4c4">
+      <Button layoutX="162.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#lihtneVajuta" prefHeight="168.0" prefWidth="216.0" style="-fx-background-color: #151115;" text="kerge" textFill="#e4c4c4">
          <font>
             <Font name="Lucida Sans Typewriter Regular" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="293.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#lopetaVajuta" prefHeight="168.0" prefWidth="216.0" style="-fx-background-color: #151115;" text="keskmine" textFill="#e4c4c4">
+      <Button layoutX="162.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#keskmineVajuta" prefHeight="168.0" prefWidth="216.0" style="-fx-background-color: #151115;" text="keskmine" textFill="#e4c4c4">
          <font>
             <Font name="Lucida Sans Typewriter Regular" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="527.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#lopetaVajuta" prefHeight="168.0" prefWidth="216.0" style="-fx-background-color: #151115;" text="raske" textFill="#e4c4c4">
+      <Button layoutX="162.0" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#raskeVajuta" prefHeight="168.0" prefWidth="216.0" style="-fx-background-color: #151115;" text="raske" textFill="#e4c4c4">
          <font>
             <Font name="Lucida Sans Typewriter Regular" size="12.0" />
          </font>
