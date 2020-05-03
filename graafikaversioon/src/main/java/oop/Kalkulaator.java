@@ -48,6 +48,10 @@ public class Kalkulaator {
 
     @FXML
     public void lopetaVajuta(javafx.scene.input.MouseEvent avt) {
+        if (fail.delete()) {
+            System.out.println("kustutatud vastustefail");
+            ;
+        }
         Button nupp = (Button) avt.getSource();
         Stage p = (Stage) nupp.getScene().getWindow();
         p.close();
@@ -74,7 +78,6 @@ public class Kalkulaator {
     }
 
     public void OKvajuta(MouseEvent avt) throws IOException {
-
         rejectMark.setVisible(false);
         acceptMark.setVisible(false);
         String t = tekstivali.getText();
