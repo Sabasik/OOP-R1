@@ -22,14 +22,12 @@ public class Kontroller {
 
     @FXML
     public void liitmineVajuta(MouseEvent avt) throws IOException {
-
-
         Parent juur = FXMLLoader.load(getClass().getResource("raskus.fxml"));
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         AnchorPane p = fxmlLoader.load(getClass().getResource("raskus.fxml").openStream());
         Raskus raskusAstmeKontroller = fxmlLoader.getController();
-        raskusAstmeKontroller.setTüüp(1);       //see praegu millegipärast ei seti seda tüüpi
+        raskusAstmeKontroller.setTüüp(1);       //see praegu millegipärast kanna seda edasi
 
         Stage lava = new Stage();
         lava.initOwner(liitmine.getScene().getWindow());
@@ -39,19 +37,59 @@ public class Kontroller {
     }
     @FXML
     public void lahutamineVajuta(MouseEvent avt) throws IOException {
+        Parent juur = FXMLLoader.load(getClass().getResource("raskus.fxml"));
 
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        AnchorPane p = fxmlLoader.load(getClass().getResource("raskus.fxml").openStream());
+        Raskus raskusAstmeKontroller = fxmlLoader.getController();
+        raskusAstmeKontroller.setTüüp(2);       //see praegu millegipärast ei seti seda tüüpi
+
+        Stage lava = new Stage();
+        lava.initOwner(liitmine.getScene().getWindow());
+        lava.setScene(new Scene(juur));
+        lava.showAndWait();
     }
     @FXML
     public void korrutamineVajuta(MouseEvent avt) throws IOException {
+        Parent juur = FXMLLoader.load(getClass().getResource("raskus.fxml"));
 
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        AnchorPane p = fxmlLoader.load(getClass().getResource("raskus.fxml").openStream());
+        Raskus raskusAstmeKontroller = fxmlLoader.getController();
+        raskusAstmeKontroller.setTüüp(3);       //see praegu millegipärast ei seti seda tüüpi
+
+        Stage lava = new Stage();
+        lava.initOwner(liitmine.getScene().getWindow());
+        lava.setScene(new Scene(juur));
+        lava.showAndWait();
     }
     @FXML
     public void jagamineVajuta(MouseEvent avt) throws IOException {
+        Parent juur = FXMLLoader.load(getClass().getResource("raskus.fxml"));
 
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        AnchorPane p = fxmlLoader.load(getClass().getResource("raskus.fxml").openStream());
+        Raskus raskusAstmeKontroller = fxmlLoader.getController();
+        raskusAstmeKontroller.setTüüp(4);       //see praegu millegipärast ei seti seda tüüpi
+
+        Stage lava = new Stage();
+        lava.initOwner(liitmine.getScene().getWindow());
+        lava.setScene(new Scene(juur));
+        lava.showAndWait();
     }
     @FXML
     public void kombineeritudVajuta(MouseEvent avt) throws IOException {
+        Parent juur = FXMLLoader.load(getClass().getResource("raskus.fxml"));
 
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        AnchorPane p = fxmlLoader.load(getClass().getResource("raskus.fxml").openStream());
+        Raskus raskusAstmeKontroller = fxmlLoader.getController();
+        raskusAstmeKontroller.setTüüp(5);       //see praegu millegipärast ei seti seda tüüpi
+
+        Stage lava = new Stage();
+        lava.initOwner(liitmine.getScene().getWindow());
+        lava.setScene(new Scene(juur));
+        lava.showAndWait();
     }
 
 

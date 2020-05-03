@@ -1,13 +1,19 @@
 package oop;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+
+import java.io.IOException;
 
 public class Kalkulaator {
 
@@ -49,8 +55,9 @@ public class Kalkulaator {
         vastus = Integer.parseInt(info[1]);
     }
 
-    public void OKvajuta(MouseEvent avt){
+    public void OKvajuta(MouseEvent avt) throws IOException {
         //faililugemine kõik tehted
         //vastuse kontrollimine
+
     }
 }

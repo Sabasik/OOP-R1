@@ -27,6 +27,7 @@ public class Raskus {
         Stage p = (Stage) nupp.getScene().getWindow();
         Stage lava = (Stage) p.getOwner();
 
+
         if(tüüp == 1){
             tehe = new Liitmine(1);
         } else if (tüüp == 2){
@@ -48,24 +49,76 @@ public class Raskus {
         Kalkulaator kalkulaator = fxmlLoader.getController();
         kalkulaator.setTehe(tehe);  //see ka ei seti tehet nii nagu vaja on
 
+
+
         lava.setScene(kalkulaatoriStseen);
         p.hide();
     }
 
     @FXML
     public void keskmineVajuta(MouseEvent avt) throws IOException {
-
         Button nupp = (Button) avt.getSource();
         Stage p = (Stage) nupp.getScene().getWindow();
-        p.close();
+        Stage lava = (Stage) p.getOwner();
+
+        if(tüüp == 1){
+            tehe = new Liitmine(2);
+        } else if (tüüp == 2){
+            tehe = new Lahutamine(2);
+        } else if (tüüp == 3){
+            tehe = new Korrutamine(2);
+        } else if (tüüp == 4){
+            tehe = new Jagamine(2);
+        } else if (tüüp == 5){
+            tehe = new Kombineeritud(2);
+        }
+
+        Parent juurKalk = FXMLLoader.load(getClass().getResource("kalkulaator.fxml"));
+        Scene kalkulaatoriStseen = new Scene(juurKalk);
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("kalkulaator.fxml"));
+        AnchorPane k = fxmlLoader.load(getClass().getResourceAsStream("kalkulaator.fxml"));
+        Kalkulaator kalkulaator = fxmlLoader.getController();
+        kalkulaator.setTehe(tehe);  //see ka ei seti tehet nii nagu vaja on
+
+
+
+        lava.setScene(kalkulaatoriStseen);
+        p.hide();
     }
 
     @FXML
     public void raskeVajuta(MouseEvent avt) throws IOException {
-
         Button nupp = (Button) avt.getSource();
         Stage p = (Stage) nupp.getScene().getWindow();
-        p.close();
+        Stage lava = (Stage) p.getOwner();
+
+        if(tüüp == 1){
+            tehe = new Liitmine(3);
+        } else if (tüüp == 2){
+            tehe = new Lahutamine(3);
+        } else if (tüüp == 3){
+            tehe = new Korrutamine(3);
+        } else if (tüüp == 4){
+            tehe = new Jagamine(3);
+        } else if (tüüp == 5){
+            tehe = new Kombineeritud(3);
+        }
+
+        Parent juurKalk = FXMLLoader.load(getClass().getResource("kalkulaator.fxml"));
+        Scene kalkulaatoriStseen = new Scene(juurKalk);
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("kalkulaator.fxml"));
+        AnchorPane k = fxmlLoader.load(getClass().getResourceAsStream("kalkulaator.fxml"));
+        Kalkulaator kalkulaator = fxmlLoader.getController();
+        kalkulaator.setTehe(tehe);  //see ka ei seti tehet nii nagu vaja on
+
+
+
+        lava.setScene(kalkulaatoriStseen);
+        p.hide();
     }
 
     @FXML

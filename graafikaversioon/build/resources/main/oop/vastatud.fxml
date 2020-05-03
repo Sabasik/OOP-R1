@@ -24,7 +24,7 @@
             <Image url="@../../../../../../../Users/Elis/OneDrive/ÜLIKOOL/OOP/ruhmatoo1/graf/accept-icon-51.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="327.0" layoutY="231.0" opacity="0.7">
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="322.0" layoutY="231.0" opacity="0.7">
          <image>
             <Image url="@../../../../../../../Users/Elis/OneDrive/ÜLIKOOL/OOP/ruhmatoo1/graf/kisspng-no-symbol-computer-icons-clip-art-image-red-cross-5aadfa29a32b44.5706284615213512096684.png" />
          </image>
@@ -39,5 +39,10 @@
             <Font name="Lucida Sans Typewriter Regular" size="46.0" />
          </font>
       </Text>
+      <ImageView fitHeight="173.0" fitWidth="228.0" layoutX="186.0" layoutY="27.0">
+         <image>
+            <Image url="@../../../../source%20(2).gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
