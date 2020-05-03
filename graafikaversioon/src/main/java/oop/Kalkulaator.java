@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -53,11 +54,21 @@ public class Kalkulaator {
         avaldis.setText(info[0]);
         avaldis.setVisible(true);
         vastus = Integer.parseInt(info[1]);
+        tekstivali.setText("");
     }
 
     public void OKvajuta(MouseEvent avt) throws IOException {
         //faililugemine kõik tehted
         //vastuse kontrollimine
-
+        String t = tekstivali.getText();
+        try {
+            if (Integer.valueOf(t) == vastus) {
+                tekstivali.setText("Õige!");
+            } else {
+                tekstivali.setText("Vale vastus, proovi uuesti!");
+            }
+        } catch (NumberFormatException exc) {
+            tekstivali.setText("Sisesta arvuline vastus!");
+        }
     }
 }
