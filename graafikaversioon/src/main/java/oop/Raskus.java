@@ -27,7 +27,6 @@ public class Raskus {
         Stage p = (Stage) nupp.getScene().getWindow();
         Stage lava = (Stage) p.getOwner();
 
-
         if(tüüp == 1){
             tehe = new Liitmine(1);
         } else if (tüüp == 2){
@@ -40,16 +39,14 @@ public class Raskus {
             tehe = new Kombineeritud(1);
         }
 
-        Parent juurKalk = FXMLLoader.load(getClass().getResource("kalkulaator.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("kalkulaator.fxml"));
+        Parent juurKalk = fxmlLoader.load();
         Scene kalkulaatoriStseen = new Scene(juurKalk);
 
-        FXMLLoader fxmlLoader = new FXMLLoader();
+
         fxmlLoader.setLocation(getClass().getResource("kalkulaator.fxml"));
-        AnchorPane k = fxmlLoader.load(getClass().getResourceAsStream("kalkulaator.fxml"));
         Kalkulaator kalkulaator = fxmlLoader.getController();
-        kalkulaator.setTehe(tehe);  //see ka ei seti tehet nii nagu vaja on
-
-
+        kalkulaator.setTehe(tehe);
 
         lava.setScene(kalkulaatoriStseen);
         p.hide();
@@ -73,16 +70,14 @@ public class Raskus {
             tehe = new Kombineeritud(2);
         }
 
-        Parent juurKalk = FXMLLoader.load(getClass().getResource("kalkulaator.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("kalkulaator.fxml"));
+        Parent juurKalk = fxmlLoader.load();
         Scene kalkulaatoriStseen = new Scene(juurKalk);
 
-        FXMLLoader fxmlLoader = new FXMLLoader();
+
         fxmlLoader.setLocation(getClass().getResource("kalkulaator.fxml"));
-        AnchorPane k = fxmlLoader.load(getClass().getResourceAsStream("kalkulaator.fxml"));
         Kalkulaator kalkulaator = fxmlLoader.getController();
-        kalkulaator.setTehe(tehe);  //see ka ei seti tehet nii nagu vaja on
-
-
+        kalkulaator.setTehe(tehe);
 
         lava.setScene(kalkulaatoriStseen);
         p.hide();
@@ -106,16 +101,14 @@ public class Raskus {
             tehe = new Kombineeritud(3);
         }
 
-        Parent juurKalk = FXMLLoader.load(getClass().getResource("kalkulaator.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("kalkulaator.fxml"));
+        Parent juurKalk = fxmlLoader.load();
         Scene kalkulaatoriStseen = new Scene(juurKalk);
 
-        FXMLLoader fxmlLoader = new FXMLLoader();
+
         fxmlLoader.setLocation(getClass().getResource("kalkulaator.fxml"));
-        AnchorPane k = fxmlLoader.load(getClass().getResourceAsStream("kalkulaator.fxml"));
         Kalkulaator kalkulaator = fxmlLoader.getController();
-        kalkulaator.setTehe(tehe);  //see ka ei seti tehet nii nagu vaja on
-
-
+        kalkulaator.setTehe(tehe);
 
         lava.setScene(kalkulaatoriStseen);
         p.hide();

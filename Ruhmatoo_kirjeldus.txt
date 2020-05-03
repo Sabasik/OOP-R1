@@ -86,15 +86,15 @@ Rühmaliikmete panus
 		-> orienteeruv ajakulu: 20h
 	II etapp
 	-Elis
-		-> ideed, täpsustused, suhtlus failidega
+		-> ideed, graafika, suhtlus failidega
 		-> orienteeruv ajakulu: 20h
 	-Kadi
-		-> graafika, kirjeldus
+		-> ideed, graafika, kirjeldus
 		-> orienteeruv ajakulu: 20h
 
 Tegemise mured:
-Arvasime mõlemad, et tähtaeg on nädal aega hiljem ning seetõttu ei jõudnud kõiki soovitud elemente
-programmi lisada, ning tulemusena on programm küllaltki lihtne ja tavaline.
+Arvasime mõlemad, et tähtaeg on nädal aega hiljem ning seetõttu ei saanud nii rahulikult asjasse
+süveneda kui oleks tahtnud.
 
 Hinnang lõpptulemusele:
 I etapp
