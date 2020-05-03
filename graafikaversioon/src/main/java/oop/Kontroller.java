@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 
@@ -19,6 +20,7 @@ public class Kontroller {
 
     private int tehteTüüp;
 
+    File fail = new File("oigedvastused.txt");
 
     @FXML
     public void liitmineVajuta(MouseEvent avt) throws IOException {
@@ -85,6 +87,10 @@ public class Kontroller {
 
     @FXML
     public void lopetaVajuta(MouseEvent avt) {
+        if (fail.delete()) {
+            System.out.println("kustutatud vastustefail");
+            ;
+        }
         Button nupp = (Button) avt.getSource();
         Stage p = (Stage) nupp.getScene().getWindow();
         p.close();

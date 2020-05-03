@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -182,10 +183,17 @@
             </ImageView>
          </children>
       </Pane>
-      <Button layoutX="505.0" layoutY="605.0" mnemonicParsing="false" onMouseClicked="#arvutusTehe" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #151115;" text="edasi" textFill="#ddd1d1">
+      <Button layoutX="505.0" layoutY="605.0" mnemonicParsing="false" onMouseClicked="#edasiVajuta" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #151115;" text="edasi" textFill="#ddd1d1">
          <font>
             <Font name="Lucida Sans Typewriter Regular" size="12.0" />
          </font>
       </Button>
+      <Button layoutX="17.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#arvutusTehe" prefHeight="31.0" prefWidth="132.0" style="-fx-background-color: #151115;" text="genereeri tehe!" textFill="#ddd1d1">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="12.0" />
+         </font>
+      </Button>
+      <Line endX="33.0" layoutX="116.0" layoutY="60.0" startX="-100.0" stroke="RED" />
+      <Line endX="33.0" layoutX="117.0" layoutY="15.0" startX="-100.0" stroke="#f21e1e" />
    </children>
 </AnchorPane>
