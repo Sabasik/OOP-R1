@@ -120,7 +120,7 @@ II etapp
 		-> orienteeruv ajakulu: 35h
 	-Kadi
 		-> ideed, graafika, kirjeldus
-		-> orienteeruv ajakulu: 20h
+		-> orienteeruv ajakulu: 30h
 
 
 Tegemise mured:
