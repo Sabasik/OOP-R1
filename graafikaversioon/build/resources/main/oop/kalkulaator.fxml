@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -158,21 +159,29 @@
             <Font name="Lucida Sans Typewriter Regular" size="12.0" />
          </font>
       </Button>
-      <Text fx:id="avaldis" fill="#dad2d2" layoutX="213.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="218.0">
+      <Pane fx:id="acceptMark" layoutX="529.0" layoutY="128.0" visible="false">
+         <children>
+            <ImageView id="accept" fitHeight="42.0" fitWidth="42.0" opacity="0.67">
+               <image>
+                  <Image url="@../../../../../../../Users/Elis/OneDrive/ÜLIKOOL/OOP/ruhmatoo1/graf/accept-icon-51.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text fx:id="avaldis" fill="#dad2d2" layoutX="108.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" visible="false" wrappingWidth="410.0">
          <font>
             <Font name="Lucida Sans Typewriter Regular" size="39.0" />
          </font>
       </Text>
-      <ImageView id="accept" fitHeight="48.0" fitWidth="52.0" layoutX="529.0" layoutY="122.0" opacity="0.67" visible="false">
-         <image>
-            <Image url="@../../../../../../../Users/Elis/OneDrive/ÜLIKOOL/OOP/ruhmatoo1/graf/accept-icon-51.png" />
-         </image>
-      </ImageView>
-      <ImageView id="xmark" fitHeight="31.0" fitWidth="33.0" layoutX="59.0" layoutY="139.0" opacity="0.66" visible="false">
-         <image>
-            <Image url="@../../../../../../../Users/Elis/OneDrive/ÜLIKOOL/OOP/ruhmatoo1/graf/kisspng-no-symbol-computer-icons-clip-art-image-red-cross-5aadfa29a32b44.5706284615213512096684.png" />
-         </image>
-      </ImageView>
+      <Pane fx:id="rejectMark" layoutX="59.0" layoutY="139.0" visible="false">
+         <children>
+            <ImageView id="xmark" fitHeight="31.0" fitWidth="33.0" opacity="0.66">
+               <image>
+                  <Image url="@../../../../../../../Users/Elis/OneDrive/ÜLIKOOL/OOP/ruhmatoo1/graf/kisspng-no-symbol-computer-icons-clip-art-image-red-cross-5aadfa29a32b44.5706284615213512096684.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
       <Button layoutX="505.0" layoutY="605.0" mnemonicParsing="false" onMouseClicked="#arvutusTehe" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #151115;" text="edasi" textFill="#ddd1d1">
          <font>
             <Font name="Lucida Sans Typewriter Regular" size="12.0" />

@@ -1,22 +1,22 @@
 package oop;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
 public class Kalkulaator {
+
+    @FXML
+    private Pane rejectMark;
+
+    @FXML
+    private Pane acceptMark;
 
     @FXML
     private TextField tekstivali;
@@ -49,6 +49,8 @@ public class Kalkulaator {
 
     @FXML
     public void arvutusTehe(MouseEvent keyEvent) {
+        rejectMark.setVisible(false);
+        acceptMark.setVisible(false);
         System.out.println(tehe);
         String[] info = tehe.jooksuta();
         avaldis.setText(info[0]);
@@ -60,12 +62,14 @@ public class Kalkulaator {
     public void OKvajuta(MouseEvent avt) throws IOException {
         //faililugemine kõik tehted
         //vastuse kontrollimine
+        rejectMark.setVisible(false);
+        acceptMark.setVisible(false);
         String t = tekstivali.getText();
         try {
             if (Integer.valueOf(t) == vastus) {
-                tekstivali.setText("Õige!");
+                acceptMark.setVisible(true);
             } else {
-                tekstivali.setText("Vale vastus, proovi uuesti!");
+                rejectMark.setVisible(true);
             }
         } catch (NumberFormatException exc) {
             tekstivali.setText("Sisesta arvuline vastus!");
